@@ -1,0 +1,34 @@
+@import url('menu.css');
+@import url('faqs.css');
+
+/* Text selection highlight */
+::selection {
+    background-color: var(--color-scheme-1--text-selection);
+    color: white;
+}
+
+::-moz-selection {
+    background-color: var(--color-scheme-1--text-selection);
+    color: white;
+}
+
+/*
+*   CURSOR
+*/
+/* Mouse Follower component: wrapper is fixed at the viewport origin, JS moves the follower with clientX/Y */
+.mouse-follower-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.mouse-follower {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+body:has(.mouse-follower-card:hover) .mouse-follower {
+    opacity: 1;
+}
